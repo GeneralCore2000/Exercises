@@ -25,7 +25,6 @@ public class PhoneBook {
             switch (choice) {
                 case "A":
                     if (terminator <= 2) {
-                        System.out.println(terminator);
                         while (nameStart) {
                             System.out.print("Enter name >>: ");
                             name = in.nextLine();
