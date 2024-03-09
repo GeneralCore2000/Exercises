@@ -1,22 +1,22 @@
-package phonebook;
+package Test;
 
 import java.util.Scanner;
 
-public class PhoneBook {
+public class Test {
 
     Scanner in = new Scanner(System.in);
     String name = "", number = "", choice = "";
     int terminator = 0;
     boolean start = true, nameStart = true, numberStart = true;
-    String[][] phoneBook = {
-        {"09548732435", "John Lloyd"},
-        {"09548289454", "Ericka Gaspar"},
-        {"09128475032", "Karl De Leon"},
-        {"", ""},
-        {"", ""}
-    };
+    String[][] phoneBook = new String[5][2];
 
-    public PhoneBook() {
+    public Test() {
+        phoneBook[0][0] = "099999999";
+        phoneBook[0][1] = "John";
+        phoneBook[1][0] = "099999999";
+        phoneBook[1][1] = "Ericka";
+        phoneBook[2][0] = "099999999";
+        phoneBook[2][1] = "Gaspar";
 
         while (start) {
             showPhoneBook();
@@ -70,11 +70,11 @@ public class PhoneBook {
         System.out.println("\tNUMBERS \t | \t NAME");
         System.out.println("==============================================");
         for (int i = 0; i < phoneBook.length; i++) {
-            if (phoneBook[i].equals("")) {
-                break;
-            }
             System.out.print("[" + (i + 1) + "]     ");
             for (int j = 0; j < phoneBook[0].length; j++) {
+                if (phoneBook[i][j].equals("")) {
+                    break;
+                }
                 System.out.print(phoneBook[i][j] + "\t\t");
             }
             System.out.println("");
@@ -100,7 +100,7 @@ public class PhoneBook {
     }
 
     public static void main(String[] args) {
-        PhoneBook p = new PhoneBook();
+        Test p = new Test();
         p.showPhoneBook();
     }
 
