@@ -6,7 +6,7 @@ public class PhoneBook {
 
     Scanner in = new Scanner(System.in);
     String name = "", number = "", choice = "";
-    int terminator = 0;
+    int terminator = 1;
     boolean start = true, nameStart = true, numberStart = true;
     String[][] phoneBook = {
         {"09548732435", "John Lloyd"},
@@ -17,7 +17,6 @@ public class PhoneBook {
     };
 
     public PhoneBook() {
-
         while (start) {
             showPhoneBook();
             System.out.print("[A]dd\n[E]xit\nYour choice >>: ");
@@ -25,7 +24,8 @@ public class PhoneBook {
 
             switch (choice) {
                 case "A":
-                    if (terminator < 3) {
+                    if (terminator <= 2) {
+                        System.out.println(terminator);
                         while (nameStart) {
                             System.out.print("Enter name >>: ");
                             name = in.nextLine();
@@ -37,22 +37,25 @@ public class PhoneBook {
                             }
                         }
                         while (numberStart) {
+
                             System.out.print("Enter number >>: ");
                             number = in.nextLine();
 
-                            if (number.length() < 11 || number.length() > 11) {
+                            if (number.length() != 11) {
                                 System.out.println("Number must only be 11 Digits.");
                             } else {
                                 numberStart = false;
                                 addToPhoneBook(number, name);
+                                terminator++;
                             }
-
                         }
-
                     } else {
-                        System.out.println("Phone book is already full");
-                        break;
+                        System.out.println("Phone book is full.");
                     }
+                    nameStart = true;
+                    numberStart = true;
+                    break;
+
                 case "E":
                     start = false;
                     break;
@@ -70,7 +73,7 @@ public class PhoneBook {
         System.out.println("\tNUMBERS \t | \t NAME");
         System.out.println("==============================================");
         for (int i = 0; i < phoneBook.length; i++) {
-            if (phoneBook[i].equals("")) {
+            if (phoneBook[i][0].equals("")) {
                 break;
             }
             System.out.print("[" + (i + 1) + "]     ");
@@ -91,17 +94,18 @@ public class PhoneBook {
                         phoneBook[i][j] = num;
                     } else {
                         phoneBook[i][j] = name;
+                        flag = 1;
                     }
-                } else {
-                    flag = 1;
-                }
+                } 
+            }
+            if (flag == 1) {
+                break;
             }
         }
+
     }
 
     public static void main(String[] args) {
         PhoneBook p = new PhoneBook();
-        p.showPhoneBook();
     }
-
 }
