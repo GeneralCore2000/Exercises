@@ -1,2 +1,8 @@
-**2nd Semester
-Phonebook - Prelim Performance Task (Method used)
+**2nd Semester**
+
+|Date|Title|Lesson|
+|-------------|-------------|-----|
+|03/09/2024|Phonebook|Method
+
+
+
