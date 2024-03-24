@@ -9,6 +9,6 @@
 |Date|Purpose|Title|Lesson|
 |-------------|-------------|-----|---|
 |03/09/2024|Prelim Examination|Phonebook|Method
-
+|03/23/2024|Practice Activity|Sum of decimal to non-decimal|Method
 
 
