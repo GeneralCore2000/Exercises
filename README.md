@@ -12,5 +12,6 @@
 |03/23/2024|Practice Activity|Sum of decimal to non-decimal|Method
 |04/29/2024|Inheritance Practice/Activity|A Simple Payroll Program|Inheritance
 |06/02/2024|Practice ArrayList|BSIT12BActivity01|ArrayList
+|06/15/2024|Finals Examination|BSIT12BFinals|Methods, 2DArray
 
 
