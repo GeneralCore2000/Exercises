@@ -38,7 +38,7 @@ public class BSIT12BActivity01 {
                         palindromeChecker(num1);
                         start = false;
                     } else {
-                        System.err.println("Maximum number is 10-digit.\n");
+                        System.err.println("[Maximum[] number is 10-digit.\n");
                     }
                 }
 
